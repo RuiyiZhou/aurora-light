@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const e = require\\('./node_modules/@expo/metro-config/src/ExpoMetroConfig'\\); \")",
+      "Bash(npm install *)",
+      "Bash(npx expo *)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(cp \"/Users/ruiyizhou/.claude/projects/-Users-ruiyizhou-Documents-aurora-light/28efb4af-66d9-437e-87f1-f88bf5103daa/tool-results/webfetch-1777135472912-p4i3jo.bin\" /tmp/aurora-design.gz)",
+      "Bash(gunzip -f /tmp/aurora-design.gz)",
+      "Read(//tmp/**)",
+      "Bash(cp \"/Users/ruiyizhou/.claude/projects/-Users-ruiyizhou-Documents-aurora-light/28efb4af-66d9-437e-87f1-f88bf5103daa/tool-results/webfetch-1777136941329-oqtiaw.bin\" /tmp/aurora2.gz)",
+      "Bash(gunzip -f /tmp/aurora2.gz)",
+      "Bash(mkdir -p /tmp/aurora2-extracted)",
+      "Bash(tar -xf /tmp/aurora2 -C /tmp/aurora2-extracted)",
+      "Bash(mkdir -p /tmp/aurora3-extracted)",
+      "Bash(cp \"/Users/ruiyizhou/.claude/projects/-Users-ruiyizhou-Documents-aurora-light/28efb4af-66d9-437e-87f1-f88bf5103daa/tool-results/webfetch-1777137323384-nr39bq.bin\" /tmp/aurora3.tar.gz)",
+      "Bash(tar -xzf /tmp/aurora3.tar.gz)",
+      "Bash(mkdir -p /tmp/aurora4-extracted)",
+      "Bash(cp \"/Users/ruiyizhou/.claude/projects/-Users-ruiyizhou-Documents-aurora-light/28efb4af-66d9-437e-87f1-f88bf5103daa/tool-results/webfetch-1777153701117-xx6b6f.bin\" /tmp/aurora4.tar.gz)",
+      "Bash(tar -xzf /tmp/aurora4.tar.gz)",
+      "Bash(npx eas *)",
+      "Bash(convert --version)",
+      "Bash(node -e \" const { createCanvas } = require\\('canvas'\\); console.log\\('canvas available'\\); \")",
+      "Bash(grep -E \"^\\(sharp|jimp|canvas\\)$\")",
+      "Bash(npm --version)",
+      "Bash(node /Users/ruiyizhou/Documents/aurora-light/scripts/generate-icons.js)"
+    ]
+  }
+}

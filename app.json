@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "Aurora Light",
+    "slug": "aurora-light",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "icon": "./assets/icon.png",
+    "favicon": "./assets/favicon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#020209"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.aurora.livemap",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Aurora Light uses your location to estimate aurora visibility from your latitude."
+      }
+    },
+    "android": {
+      "package": "com.aurora.livemap",
+      "versionCode": 1,
+      "compileSdkVersion": 35,
+      "targetSdkVersion": 35,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#020209"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-location",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "bf190584-1d9a-4176-bc83-8825c4538ca6"
+      }
+    },
+    "owner": "ruiyizhou"
+  }
+}
