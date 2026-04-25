@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { NavigationContainer, BottomTabBarProps } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
 import HomeScreen from './src/screens/HomeScreen';
@@ -24,7 +25,7 @@ function EditorialTabBar({ state, descriptors, navigation, insets }: BottomTabBa
       <LinearGradient
         colors={['rgba(2,2,7,0)', 'rgba(2,2,7,0.85)', 'rgba(2,2,7,0.98)']}
         locations={[0, 0.3, 0.6]}
-        style={[styles.tabBarGradient, { paddingBottom: Math.max(insets.bottom, 16) }]}
+        style={[styles.tabBarGradient, { paddingBottom: insets.bottom + 12 }]}
         pointerEvents="box-none"
       >
         <View style={styles.tabRow}>
@@ -99,8 +100,9 @@ const NAV_THEME = {
   },
 };
 
-export default function App() {
+function AppContent() {
   const [splashDone, setSplashDone] = useState(false);
+  const insets = useSafeAreaInsets();
 
   return (
     <View style={styles.container}>
@@ -108,17 +110,8 @@ export default function App() {
         <StatusBar style="light" />
         <Tab.Navigator
           tabBar={(props) => <EditorialTabBar {...props} />}
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: '#020209',
-              shadowColor: 'transparent',
-              elevation: 0,
-              borderBottomWidth: 1,
-              borderBottomColor: '#0d0d20',
-            },
-            headerTintColor: '#f8fafc',
-            headerTitleStyle: { fontWeight: '700', fontSize: 17, letterSpacing: -0.2 },
-          }}
+          screenOptions={{ headerShown: false }}
+          sceneContainerStyle={{ paddingTop: insets.top }}
         >
           <Tab.Screen name="Home"     component={HomeScreen}     options={{ title: 'Aurora Light' }} />
           <Tab.Screen name="Forecast" component={ForecastScreen} />
@@ -127,6 +120,14 @@ export default function App() {
       </NavigationContainer>
       {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
     </View>
+  );
+}
+
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <AppContent />
+    </SafeAreaProvider>
   );
 }
 
