@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "design-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "4400", "/tmp/aurora4-extracted/aurora-light/project/aurora-home"],
+      "port": 4400
+    }
+  ]
+}

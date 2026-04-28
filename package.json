@@ -30,6 +30,7 @@
     "@babel/core": "^7.24.0",
     "@types/react": "~19.1.0",
     "babel-preset-expo": "^55.0.18",
+    "puppeteer": "^24.42.0",
     "typescript": "^5.3.0"
   },
   "private": true
